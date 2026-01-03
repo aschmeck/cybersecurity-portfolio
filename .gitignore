@@ -1,0 +1,30 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+*.bak
+.vscode/
+.idea/
+
+# Secrets / keys
+.env
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+
+# VM / disk images
+*.iso
+*.ova
+*.vdi
+*.vmdk
+*.qcow2
+
+# Node / Python cache (future-proof)
+node_modules/
+__pycache__/
+*.pyc
+*.bak

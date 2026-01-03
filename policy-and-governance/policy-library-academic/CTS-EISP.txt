@@ -1,0 +1,199 @@
+Enterprise Information Security Policy
+1.0 Statement of Purpose
+This document will identify the elements of a good security policy, explain the need for information security, identify the
+information security roles and responsibilities, and establish minimum information security practices for Cyber Tree
+Systems (CTS) computer resources and associated communication networks utilizing the CTS enterprise network.
+
+2.0 Information Security Elements
+Assets are defined, in this case, as items that are owned by the company, that have an assessed financial value. This
+would include computer hardware, software, information, and lines of communication coming into and leaving the
+company campus.
+Threats are defined as objects, people, or other entities that represent a risk of loss to an asset(s). Threats occur in
+several categories. These include:
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+
+Acts of human error or failure (Accidents, employee mistakes)
+Compromises to intellectual property (Piracy, copyright infringement)
+Deliberate acts of espionage or trespass (Unauthorized access)
+Deliberate acts of information extortion (Blackmail of disclosure)
+Deliberate acts of sabotage or vandalism (Destruction of information)
+Deliberate acts of theft (Illegal confiscation of equipment)
+Deliberate software attacks (Viruses, worms, denial-of-service)
+Deviations in QOS from service providers (Power and WAN issues)
+Forces of nature (Fire, flood, earthquake, lightning)
+Technical hardware failures or errors (Equipment failure)
+Technical software failures or errors (Bugs, unknown loopholes)
+Technical obsolescence (Antiquated or outdated technology)
+
+Vulnerabilities are defined as weaknesses or faults in a system or protection mechanism that exposes information to an
+attack or damage. Attacks are acts of intentional or unintentional attempt to compromise the information and/or the
+systems that support it.
+Network security is a critical aspect of CTS’s overall information security strategy. The enterprise firewall and VPN are
+primary security controls that help safeguard data and prevent unauthorized access. The firewall enforces network
+perimeter security by filtering traffic, blocking potential threats, and maintaining access controls. The VPN ensures that
+remote access is encrypted and secure, protecting CTS’s digital assets from external threats.
+
+1
+
+3.0 Need for Information Security
+The continued use of information technology resources throughout CTS’ working infrastructure has continued to evolve
+with the intent of improving services for our constituency. These improvements allow for rapid and efficient
+communication among various departments and often directly with the directors of the surrounding business
+community. Consequently, our constituency has become heavily dependent upon the availability of a reliable
+information technology infrastructure to meet its business needs. Unfortunately, the “electronic highways” that facilitate
+our ability to instantaneously share information also creates vulnerabilities, potentially allowing unauthorized persons to
+gain access to CTS resources.
+In order to control threats to information technology resources across the enterprise network and associated domains, a
+series of Information security instructions, entitled “FIREWALL AND VPN SECURITY POLICY, INSTRUCTIONS, AND
+TECHNICAL STANDARDS,” is established. These instructions include strict measures for network perimeter security,
+ensuring that the firewall effectively isolates CTS’s internal systems from external threats. Additionally, all remote access
+must utilize encrypted VPN connections to safeguard data in transit and maintain the confidentiality of CTS’s sensitive
+information.
+
+4.0 Information Security Roles & Responsibilities
+All CTS faculty members, staff, students, contractors, agents, or other individuals utilizing computer resources, data
+communication networks, or other information technology infrastructure resources owned or leased by CTS, including
+any other state agencies having electrical connectivity to the network, are subject to this policy.
+Additionally, any remote access, such as dial-up connections, personal Internet Service Provider access or VPN
+connection, onto the CTS enterprise network or associated domains will have the same effect as direct access via CTSprovided equipment or facilities.
+Firewall administrators are responsible for managing, monitoring, and maintaining the enterprise firewall. Their duties
+include configuring security rules, blocking unauthorized access, and ensuring compliance with CTS security standards.
+VPN access managers oversee the secure implementation of remote connections, ensuring that all remote users adhere
+to encryption protocols and access control measures to protect CTS network integrity.
+
+2
+
+5.0 General Policy Elements
+5.1 Protection of Information:
+Policy: Information must be protected in a manner commensurate with its sensitivity, value, and criticality.
+Audience: Technical Staff
+
+5.2 Information Handling, Access, & Usage:
+Policy: All data and information sent over the CTS enterprise network and associated domain communications
+systems, are the property of CTS.
+Audience: All
+
+5.3 Data & Program Damage Disclaimers:
+Policy: CTS is not held responsible for any loss or damage to data or software that results from its efforts to protect
+the confidentiality, integrity, and availability of the information handled by computers and communications systems.
+Audience: End Users
+
+5.4 Legal Conflicts:
+Policy: CTS information security policies were drafted to meet or exceed existing federal and state laws and
+regulations. Any policy implemented by CTS that is found to be in conflict with any existing laws or regulations should
+immediately be brought to the attention of the Chief Information Security Officer.
+Audience: End Users
+
+5.5 Exceptions to Policies:
+Policy: Exceptions to information security policies exist on occasion where a risk assessment examining the
+implications of being out of compliance has been performed, where a standard risk acceptance form has been
+prepared by the data owner or management, and where this form has been approved by both the Chief Information
+Security Officer and internal Audit Management.
+Audience: Management
+
+5.6 Non-enforcement:
+Policy: Management’s non-enforcement of any policy requirement does not constitute its consent.
+Audience: End Users
+
+5.7 Violation of the Law:
+Policy: CTS will prosecute violators of federal and state computer crime laws as laid out within the applicable laws.
+Audience: End Users
+
+5.8 Revocation of Access Privileges:
+Policy: CTS reserves the right to revoke a user’s information technology privileges at any time.
+Audience: End Users
+
+5.9 Industry-Specific Information Security Standards:
+Policy: CTS information systems must employ industry-specific information security standards.
+Audience: Technical Staff
+
+3
+
+5.10 Use of Information Security Policies and Procedures:
+Policy: All CTS information security documentation, including, but not limited to, policies, standards, and procedures,
+must be classified as “Internal Use Only”, unless expressly created for external business processes and partners.
+Audience: All
+
+5.11 Authority Over Data:
+Policy: CTS reserves the right to examine all information transmitted through these systems. Examination of such
+information may take place without warning to the parties sending or receiving such information.
+Audience: All
+
+5.12 Expectation of Privacy:
+Policy: Staff, contractors, agents, or other individuals should have no expectation of privacy associated with the
+information they store in or send through these systems; most files and documents maintained by CTS are subject to
+public review under the Georgia Open Records Act. This includes computer files and other stored material regardless
+of the medium of storage.
+Audience: All
+
+5.13 Mission Critical Systems Information Handling:
+Policy: CTS reserves the right to delete, summarize, or edit any information posted to, or transiting through, CTS
+information systems. These systems are scarce, Company-owned resources designed to support mission-critical
+Company activities and goals.
+Audience: All
+
+6.0 Review & Evaluation
+6.1 Review Period:
+Policy: This policy and associated instructions require a quarterly review by the Chief Information Officer’s
+Departmental Directors or agents.
+Audience: Management & Board of Directors
+
+6.2 Authority:
+Policy: Authority to establish and enforce this policy and associated security policy documents are made by Chief
+Information Officer and Chief Information Security Officer.
+Audience: Management & Board of Directors
+
+4
+
+7.0 Reference
+The Georgia Computer Systems Protection Act (O.C.G.A. 16-9-90) specifies unlawful acts involving information resources
+and subsequent penalties upon conviction. As data residing or transiting CTS networks and machines are held in great
+trust, it must be afforded the greatest safeguards. Therefore, information security policy, instruction, processes, and
+standards created in furtherance of protecting CTS Company information assets rely upon the Georgia Computer Systems
+Protection Act (O.C.G.A 16-9-90) TO ENSURE COMPLIANCE. Violators may be prosecuted accordingly.
+
+** Portions of this policy were copied and or modified from tables 4-1 and 4-2 (pages 111-115) of Management of
+Information Security by Dr. Michael Whitman and Professor Herbert Mattord
+
+8.0 Review History
+Revision Number
+2.0
+
+Date
+1/16/2025
+
+Editor
+Aidan Schmeckpeper
+
+2.1
+
+2/19/2025
+
+Aidan Schmeckpeper
+
+Reason
+Separated into library
+and prepared for future
+edits.
+Better conform to new
+organizational chart
+and firewall/VPN
+policy. Removed Ethics
+Policy as it did not
+pertain to Information
+Security.
+
+5
+
+
