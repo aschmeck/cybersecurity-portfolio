@@ -1,87 +1,88 @@
-# Cybersecurity Homelab
+# Homelab Configuration — schmeck.lab
 
-This repository documents the design, deployment, and ongoing operation of my cybersecurity homelab. The environment is built to mirror the moving parts of a small enterprise—directory services, endpoint hardening, network segmentation, traffic inspection, centralized logging, and structured incident response practice. Every component is configured deliberately, tested repeatedly, and documented in detail.
+**Author:** [@aschmeck](https://github.com/aschmeck)
 
-The purpose is straightforward: develop and demonstrate real operational security experience. This lab acts as a controlled environment for validating defensive techniques, troubleshooting complex systems, and building an engineering process that aligns with modern security expectations.
+---
 
-## Scope and Objectives
+## Overview
 
-This homelab serves as a platform for:
+This document describes the physical and virtual infrastructure underlying all lab work in this portfolio. The environment is built on a personal daily-driver workstation running Debian 13 — not a dedicated lab box — with KVM/QEMU virtualization hosting a segmented network of five VMs. The lab is intentionally designed to mirror the structure of a small enterprise environment: a domain controller, a domain-joined workstation, a SIEM, a firewall, and an attacker machine operating on an isolated network segment.
 
-- Systems administration across Linux and Windows
-- Network architecture using KVM bridges and pfSense routing
-- Endpoint hardening, firewall configuration, and kernel-level tuning
-- Log collection and SIEM analysis via Wazuh
-- Threat detection experiments, including packet capture and alert validation
-- Incident response workflows based on practical simulations
+Every lab in this portfolio was conducted against this environment.
 
-Each subsystem is configured with reproducibility in mind—versioned configurations, structured documentation, and evidence artifacts accompany most major changes.
+---
 
-## Core Environment
+## Physical Host
 
-The lab currently consists of:
-- Virtualization Host: Debian 13 workstation running KVM/QEMU with virt-manager
-- Firewall/Gateway: pfSense
-- Server Infrastructure: Windows Server 2022 (Active Directory Domain Services)
-- Workstations: Windows 11, Kali Linux
-- Security Infrastructure: Wazuh Manager on Ubuntu
-- Tooling: Sysmon, nftables, Wireshark, ClamAV, Lynis, systemd-timer maintenance suite
-- All systems operate on an internal network with controlled outbound access. Kali maintains limited external connectivity to support testing and simulation without exposing the rest of the environment.
+| Attribute | Detail |
+|---|---|
+| OS | Debian 13 |
+| Hypervisor | KVM/QEMU (libvirt) |
+| Disk Encryption | LUKS2 |
+| Firewall | nftables (deny-by-default) |
+| Role | Daily-driver workstation and lab host |
 
-## Design Philosophy
+The host machine runs nftables as its primary firewall with a strict deny-by-default policy. Full-disk encryption via LUKS2 is active. The lab environment runs on top of the daily-driver OS — VMs are started and stopped as needed rather than running continuously.
 
-The lab is built around several foundational principles:
+The host configuration and hardening are documented separately in the [Linux Migration project](../../projects/linux-migration/README.md).
 
-- Transparency — Real configurations, real fixes, and real failures are documented.
-- Reproducibility — Scripts, configs, and system behaviors are version-controlled.
-- Security-by-default — Minimal services exposed, strict firewalling, and hardened hosts.
-- Operational accuracy — Configurations match realistic enterprise practices, not shortcuts.
-- Iterative refinement — Systems evolve as understanding deepens and requirements change.
+---
 
-This repository reflects that process—not just the final state, but the engineering behind it.
+## Network Topology
 
-## Repository Structure
-```
-cybersecurity-homelab/
-│
-├── docs/                       # Architecture, walkthroughs, and project documentation
-│   ├── linux-migration/        # Debian 13 workstation rebuild & hardening
-│   ├── homelab-projects/       # Security exercises, simulations, IR workflows
-│   ├── network-design/         # Network diagrams, segmentation plans, firewall logic
-│   ├── windows/                # Windows Server + Windows 11 configurations
-│   ├── wazuh/                  # SIEM setup, rules, and detection tuning
-│   └── policies/               # Security policies and standards
-│
-├── artifacts/                  # Logs, exported configs, screenshots, and evidence
-├── scripts/                    # Bash/Python tooling and automation
-└── README.md
-```
+Two virtual networks are managed by libvirt:
 
-## Current Capabilities
+| Network | Interface | Type | Purpose |
+|---|---|---|---|
+| Default NAT | virbr0 | NAT | libvirt default — not used for lab traffic |
+| Lab LAN | virbr-lan | Isolated | Lab segment — all VM-to-VM traffic |
 
-The environment currently supports:
+pfSense sits between the host and the lab LAN segment, handling WAN connectivity and routing for lab VMs. The isolated `virbr-lan` network ensures lab traffic does not interact with the host's production network interfaces.
 
-- Highly controlled KVM-based virtualization with multiple bridged networks
-- Hardened Debian host with a complete nftables ruleset
-- Automated maintenance via systemd timers (updates, log cleanup, disk checks, security scans)
-- Centralized log collection and monitoring through Wazuh
-- Windows Event Visibility enhanced with Sysmon
-- Packet analysis workflows using Wireshark
-- Controlled offensive testing using Kali
+---
 
-Most subsystems are fully functional, and their configurations are captured within the repository.
+## VM Inventory
 
-### Work in Progress
+| VM | IP Address | OS | Role |
+|---|---|---|---|
+| pfSense | — | pfSense | WAN gateway and router for lab segment |
+| Kali Linux | 192.168.10.55 | Kali Linux | Attacker / offensive tooling |
+| Ubuntu / Splunk | 192.168.10.50 | Ubuntu 24.04 | SIEM — Splunk Enterprise |
+| DC01 | 192.168.10.100 | Windows Server 2022 | Domain controller — schmeck.lab |
+| WIN11 | 192.168.10.54 | Windows 11 Pro | Domain-joined workstation |
 
-The networking layer is in active development—static addressing, pfSense routing, and VM communication paths are being finalized. Windows Server is provisioned and awaiting further domain services configuration. Documentation updates are ongoing as each subsystem reaches a stable state.
+---
 
-## Future Roadmap
+## Active Directory Domain
 
-Focus areas for continued development include:
+| Attribute | Detail |
+|---|---|
+| Domain Name | schmeck.lab |
+| NetBIOS Name | SCHMECK |
+| Forest / Domain Mode | Windows Server 2016 |
+| Domain Controller | DC01 — 192.168.10.100 |
 
-- Automated detection tuning for Wazuh
-- Building structured rules, alert-quality improvements, and automated workflows for evaluating detection efficacy.
-- Red-team attack chain simulations
-- Executing controlled adversarial sequences to generate telemetry, validate defensive configurations, and map detections to MITRE ATT&CK.
+**Organizational Units:**
+- `Corp-Users` — domain user accounts
+- `Corp-Groups` — security groups
+- `Workstations` — domain-joined endpoints
 
-Additional roadmap items will be added only after the baseline environment is fully completed and documented.
+**Domain Accounts:**
+
+| Username | Role |
+|---|---|
+| ssummers | Domain Administrator |
+| wworthington | Standard user |
+| efrost | Standard user |
+
+Audit policy is configured on DC01 to capture key security subcategories including logon events, account management, object access, and policy changes. Splunk Universal Forwarder is installed on DC01 and WIN11, forwarding Windows Event Logs to Splunk Enterprise on port 9997.
+
+---
+
+## SIEM Configuration
+
+The lab originally ran Wazuh as its SIEM, used during the initial alert operationalization work documented in the Wazuh Failed Logon Alerting project. The environment was subsequently migrated to Splunk Enterprise, which is the active SIEM for all current and future lab work. That migration is documented in the Splunk Homelab series under `services/`.
+
+Splunk Enterprise runs on Ubuntu at `192.168.10.50`. A dedicated `windows` index receives forwarded events from both DC01 and WIN11. Splunk is configured for boot-start on the Ubuntu host and is brought online during active detection work. The Universal Forwarder on each Windows host queues events locally while Splunk is offline, ensuring no telemetry is lost between sessions.
+
+
