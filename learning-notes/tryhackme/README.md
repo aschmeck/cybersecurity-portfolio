@@ -1,21 +1,26 @@
+# TryHackMe
 
-# TryHackMe Blue Team Journey
+This directory contains notes and write-ups from TryHackMe rooms completed as part of ongoing skill development. This is reference material — not portfolio labs — but it reflects the breadth of study running alongside the hands-on homelab work.
 
-## Overview
-This branch documents my progress through TryHackMe’s **Blue Team** learning path, focusing on defensive security, threat detection, and incident response. Through hands-on labs and challenges, I’ve gained practical experience in securing systems, analyzing threats, and responding to cyber incidents. As I complete new rooms, I'll be adding summaries of each room that I complete. For now, however, I can only give a summary of what I have done in the 54 rooms that I have completed as I focus on the SOC Level 1 Certificate.
+---
 
-## Key Areas Covered
-- **Threat Intelligence & Analysis** – Understanding attacker tactics and techniques.
-- **SIEM & Log Analysis** – Using tools like Splunk and ELK for security monitoring.
-- **Incident Response** – Handling security breaches and mitigating threats.
-- **Network Security** – Firewall configurations, IDS/IPS, and secure network design.
-- **Windows & Linux Security** – Hardening systems against vulnerabilities.
-- **Malware Analysis** – Identifying and dissecting malicious software.
+## Progress
 
-## Achievements
-- Completed multiple rooms covering **defensive security techniques**.
-- Earned badges demonstrating proficiency in **security monitoring and analysis**.
-- Gained hands-on experience with **real-world cybersecurity scenarios**.
+76 rooms completed to date, with a current focus on the SOC Level 1 learning path. Areas covered include threat intelligence, SIEM and log analysis, incident response, network security, Windows and Linux hardening, and malware analysis.
 
-## Find Me on TryHackMe
-🔗 [My TryHackMe Profile](https://tryhackme.com/p/aschmeck)
+Individual room write-ups are added as time allows. Rooms that connect directly to active lab work are prioritized.
+
+---
+
+## Write-ups
+
+- [CTI Training](CTI-training.md)
+- [Eviction Room](eviction-room.md)
+- [Summit Lab](summit-lab.md)
+- [YARA](yara-learning.md)
+
+---
+
+## TryHackMe Profile
+
+[tryhackme.com/p/aschmeck](https://tryhackme.com/p/aschmeck)
