@@ -29,7 +29,7 @@ Full environment documentation is in [`homelab/homelab-configuration/`](homelab/
 ### `homelab/`
 The core of the portfolio. Documents the build-out and use of the `schmeck.lab` homelab environment, organized into two sections:
 
-**`homelab-configuration/`** — Environment documentation, network architecture, and the detection infrastructure build-out (SIEM deployment, Active Directory, Universal Forwarder, Sysmon).
+**`homelab-configuration/`** — Environment documentation, network architecture, and the detection infrastructure build-out (Splunk Enterprise SIEM deployment, Active Directory, Universal Forwarder configuration, Sysmon).
 
 **`vulnerability-assessment/`** — Structured vulnerability assessment of the lab infrastructure conducted from Kali Linux, covering network reconnaissance, defender visibility validation, and host-by-host scanning with Greenbone Vulnerability Manager.
 
@@ -40,7 +40,7 @@ Standalone projects that support or extend the homelab work.
 
 **`linux-migration/`** — Documents the migration of the host workstation from Windows 11 to Debian 13, including full-disk encryption, nftables firewall design, firewall conflict resolution, and a systemd-based maintenance and auditing suite. Treated with the rigor of an enterprise endpoint hardening effort.
 
-**`wazuh-alert-optimization/`** — Documents the operationalization of Windows failed logon alerting using Wazuh and Slack. Demonstrates the gap between detection existing and detection being actionable — and how to close it.
+**`wazuh-alert-optimization/`** — Documents the operationalization of Windows failed logon alerting using Wazuh and Slack. Built during an earlier iteration of the homelab before migrating to Splunk Enterprise. Demonstrates the gap between detection existing and detection being actionable — and how to close it. Retained as a complete standalone artifact.
 
 ---
 
