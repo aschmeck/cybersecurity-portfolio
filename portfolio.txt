@@ -1,0 +1,121 @@
+.
+├── README.md
+├── archive
+│   ├── README.md
+│   └── homelab-virtualbox-deprecated
+│       ├── README.md
+│       ├── homelab-architecture
+│       │   └── README.md
+│       ├── kali-setup.md
+│       ├── ubuntu-config.md
+│       └── windows-wazuh-setup.md
+├── homelab
+│   ├── README.md
+│   ├── homelab-configuration
+│   │   ├── README.md
+│   │   ├── homelab-architecture
+│   │   │   ├── README.md
+│   │   │   └── schmeck-lab-network-diagram.svg
+│   │   └── services
+│   │       ├── README.md
+│   │       └── splunk
+│   │           ├── splunk-homelab-part1.md
+│   │           ├── splunk-homelab-part2.md
+│   │           └── splunk-homelab-part3.md
+│   └── vulnerability-assessment
+│       ├── README.md
+│       ├── reports
+│       │   ├── DC01-authenticated-scan.pdf
+│       │   ├── DC01-unauthenticated-scan.pdf
+│       │   ├── dc01-results.csv
+│       │   ├── ubuntu-vulnerability-scan.pdf
+│       │   ├── win11-authenticated-scan.pdf
+│       │   ├── win11-results-1.csv
+│       │   ├── win11-results-2.csv
+│       │   └── win11-unauthenticated-scan.pdf
+│       ├── va-lab-conclusion.md
+│       ├── va-lab-part1.md
+│       ├── va-lab-part2.md
+│       ├── va-lab-part3.md
+│       ├── va-lab-part4.md
+│       └── va-screenshots
+│           ├── nmap-dc01-win11-results.png
+│           ├── nmap-ubuntu-dc01-results.png
+│           ├── splunk-kali-scan-confirmed.png
+│           ├── splunk-port-sweep-distribution.png
+│           ├── splunk-scan-timechart.png
+│           └── splunk-wfp-initial-table.png
+├── learning-notes
+│   └── tryhackme
+│       ├── CTI-training.md
+│       ├── README.md
+│       ├── eviction-room.md
+│       ├── summit-lab.md
+│       └── yara-learning.md
+├── policy-and-governance
+│   ├── README.md
+│   └── policy-library-academic
+│       ├── CTS - aschmeck - EISP - Corporate Information Security Policy - Ver 2.1.pdf
+│       ├── CTS - aschmeck - ISSP - Antivirus Policy - Ver 2.1.pdf
+│       ├── CTS - aschmeck - ISSP - Authentication and Authorization Policy - Ver 2.1.pdf
+│       ├── CTS - aschmeck - ISSP - Change Control Policy - Ver2.1.pdf
+│       ├── CTS - aschmeck - ISSP - Emailing and Messaging Use and Retention Policy - Ver 2.1.pdf
+│       ├── CTS - aschmeck - ISSP - Firewall and VPN Security Policy - Ver 1.0.pdf
+│       ├── CTS - aschmeck - ISSP - Intrusion Detection System Policy - Ver 2.1.pdf
+│       ├── CTS - aschmeck - SYSSP - Contingency Planning Policy - Ver 2.1.pdf
+│       ├── CTS - aschmeck - SYSSP - Disaster Recovery Policy - Ver 2.1.pdf
+│       ├── CTS - aschmeck - SYSSP - Incident Response Policy - Ver 2.1.pdf
+│       ├── CTS - aschmeck - SYSSP - Systems Management Policy - Ver 2.1.pdf
+│       └── CTS - aschmeck - Security Directory - Ver 2.1.pdf
+├── portfolio.txt
+└── projects
+    ├── README.md
+    ├── linux-migration
+    │   ├── README.md
+    │   ├── artifacts
+    │   │   ├── README.md
+    │   │   ├── apt_first_run.log
+    │   │   ├── clamav_scan.log
+    │   │   ├── dmesg_init.txt
+    │   │   ├── final_system_audit.txt
+    │   │   ├── hash_verification.txt
+    │   │   ├── install_log.txt
+    │   │   ├── maintenance_logs
+    │   │   │   ├── daily-backup.log
+    │   │   │   ├── daily-diskcheck.log
+    │   │   │   ├── daily-logcleanup.log
+    │   │   │   └── daily-update.log
+    │   │   ├── metrics_summary.md
+    │   │   ├── nftables_final.conf
+    │   │   ├── scrub.sh
+    │   │   ├── ssh_daemon_state.txt
+    │   │   ├── sysctl_hardening.txt
+    │   │   ├── systemd
+    │   │   │   ├── daily-backup.service
+    │   │   │   ├── daily-backup.timer
+    │   │   │   ├── daily-diskcheck.service
+    │   │   │   ├── daily-diskcheck.timer
+    │   │   │   ├── daily-logcleanup.service
+    │   │   │   ├── daily-logcleanup.timer
+    │   │   │   ├── daily-update.service
+    │   │   │   ├── daily-update.timer
+    │   │   │   ├── monthly-archive.service
+    │   │   │   ├── monthly-archive.timer
+    │   │   │   ├── weekly-debsums.service
+    │   │   │   ├── weekly-debsums.timer
+    │   │   │   ├── weekly-securityscan.service
+    │   │   │   ├── weekly-securityscan.timer
+    │   │   │   ├── weekly-servicecheck.service
+    │   │   │   ├── weekly-servicecheck.timer
+    │   │   │   ├── weekly-tempclean.service
+    │   │   │   └── weekly-tempclean.timer
+    │   │   └── systemd_timer_list.txt
+    │   └── initial-setup.md
+    └── wazuh-alert-optimization
+        ├── README.md
+        └── screenshots
+            ├── alerts-graph.png
+            ├── wazuh-rule-60122.png
+            └── wazuh-slack-alert.png
+
+23 directories, 96 files
