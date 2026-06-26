@@ -8,10 +8,10 @@ This directory documents the deployment and configuration of the core security s
 
 | Write-up | Description | Status |
 |---|---|---|
-| [splunk-homelab-part1.md](splunk-homelab-part1.md) | SIEM deployment and initial configuration | ✅ Complete |
-| [splunk-homelab-part2.md](splunk-homelab-part2.md) | Active Directory deployment and endpoint log forwarding — DC01 | ✅ Complete |
-| [splunk-homelab-part3.md](splunk-homelab-part3.md) | Domain join, log forwarding, and Sysmon deployment — WIN11 | ✅ Complete |
-| [splunk-homelab-part4.md](splunk-homelab-part4.md) | SOC dashboard and alerting — Slack delivery pipeline | ✅ Complete |
+| [splunk-homelab-part1.md](./splunk-homelab-part1.md) | SIEM deployment and initial configuration | ✅ Complete |
+| [splunk-homelab-part2.md](./splunk-homelab-part2.md) | Active Directory deployment and endpoint log forwarding — DC01 | ✅ Complete |
+| [splunk-homelab-part3.md](./splunk-homelab-part3.md) | Domain join, log forwarding, and Sysmon deployment — WIN11 | ✅ Complete |
+| [splunk-homelab-part4.md](./splunk-homelab-part4.md) | SOC dashboard and alerting — Slack delivery pipeline | ✅ Complete |
 
 ---
 
