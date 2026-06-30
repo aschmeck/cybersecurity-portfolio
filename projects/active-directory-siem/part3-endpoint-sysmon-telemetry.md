@@ -3,7 +3,7 @@
 **Author:** [@aschmeck](https://github.com/aschmeck)  
 **Series:** Homelab Security Operations  
 **Part:** 3 of ongoing  
-**Previous:** [Part 2 — Active Directory Deployment and Splunk Universal Forwarder Configuration](../part2-active-directory/splunk-homelab-part2.md)  
+**Previous:** [Part 2 — Active Directory Deployment and Splunk Universal Forwarder Configuration](part2-active-directory-log-ingestion.md)  
 **Next:** Part 4 — Attack Simulation and Detection (Coming Soon)
 
 ---

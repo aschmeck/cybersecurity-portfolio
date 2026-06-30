@@ -3,7 +3,7 @@
 **Author:** [@aschmeck](https://github.com/aschmeck)  
 **Series:** Homelab Security Operations  
 **Part:** 2 of ongoing  
-**Previous:** [Part 1 — Splunk Enterprise Deployment on a Segmented KVM Lab Network](../part1-splunk-deployment/splunk-homelab-part1.md)  
+**Previous:** [Part 1 — Splunk Enterprise Deployment on a Segmented KVM Lab Network](part1-splunk-enterprise-deployment.md)  
 **Next:** Part 3 — Windows 11 Endpoint Onboarding, Sysmon Deployment, and Attack Simulation (Coming Soon)
 
 ---

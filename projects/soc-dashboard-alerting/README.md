@@ -37,7 +37,7 @@ A SIEM that ingests logs but provides no structured visibility is operationally 
 
 The dashboard was built using Splunk Classic Dashboard (Simple XML) and set as the default home view. The design follows a triage hierarchy: top-level single-value indicators for immediate counts, followed by timeline and breakdown panels, with raw event tables at the bottom for drill-down.
 
-![Dashboard set as Splunk home page, showing SOC Overview loading on login](./splunk-images/dashboard-homepage.png)
+![Dashboard set as Splunk home page, showing SOC Overview loading on login](./images/dashboard-homepage.png)
 
 **Panel inventory:**
 
@@ -59,15 +59,15 @@ The dashboard was built using Splunk Classic Dashboard (Simple XML) and set as t
 
 Color thresholds were applied to single-value panels: failed logons turn yellow at 5 and red at 20; scan indicators turn red at 1; lockouts turn yellow at 1 and red at 3.
 
-![Top-row single value panels and authentication timeline — Failed Logons yellow at 9, Lockouts green at 1, Scan Indicators red at 2](./splunk-images/authentication-timeline.png)
+![Top-row single value panels and authentication timeline — Failed Logons yellow at 9, Lockouts green at 1, Scan Indicators red at 2](./images/authentication-timeline.png)
 
-![Top failed logon accounts and failed logons by host — wworthington and WIN11 dominant from simulation](./splunk-images/failed-logon-by-host.png)
+![Top failed logon accounts and failed logons by host — wworthington and WIN11 dominant from simulation](./images/failed-logon-by-host.png)
 
 ### Alert Configuration
 
 Three scheduled alerts were configured with Slack delivery via incoming OAuth token:
 
-![All three alerts listed in Splunk — Account Lockout, DA Account Logon from Workstation, Repeated Failed Logons — all enabled, owned by schmecksoc](./splunk-images/schmecksoc-alerts.png)
+![All three alerts listed in Splunk — Account Lockout, DA Account Logon from Workstation, Repeated Failed Logons — all enabled, owned by schmecksoc](./images/schmecksoc-alerts.png)
 
 **Alert 1 — Repeated Failed Logons**
 - Search: `index=windows EventCode=4625 | stats count by Account_Name, ComputerName | where count >= 5`
@@ -107,7 +107,7 @@ On initial dashboard load, 1,546 failed logon events with blank Account_Name fie
 
 The usernames matched standard credential testing wordlists. The burst pattern — 20+ attempts within a single second at 4:42 AM on June 10 — is consistent with automated scanner behavior, not interactive authentication. This activity was residual from GVM/Greenbone authenticated scans conducted during the VA lab series (Parts 1–3).
 
-![Failed logon attempts table showing wordlist usernames (superuser, support, user-1, work) against DC01, and wworthington simulation events on WIN11](./splunk-images/failed-logon-table.png)
+![Failed logon attempts table showing wordlist usernames (superuser, support, user-1, work) against DC01, and wworthington simulation events on WIN11](./images/failed-logon-table.png)
 
 **Disposition:** Authorized activity. Known source, expected behavior from prior lab phase. No incident.
 
@@ -141,17 +141,17 @@ When the alert simulation was run, Splunk's persistent queue was still processin
 
 The simulation data is fully indexed and visible in all relevant dashboard panels. The attack chain — failed logons at 00:31 followed by lockout at 00:32 — is visible in the timestamp correlation between the Failed Logon Attempts table and the Account Lockouts panel.
 
-![Failed logon attempts panel showing wworthington on WIN11 at 00:31–00:32, immediately preceding the lockout event](./splunk-images/failed-logon-attempts.png)
+![Failed logon attempts panel showing wworthington on WIN11 at 00:31–00:32, immediately preceding the lockout event](./images/failed-logon-attempts.png)
 
-![Account lockouts dashboard panel — 4740 event for wworthington on DC01 at 00:32](./splunk-images/lockouts-dashboard.png)
+![Account lockouts dashboard panel — 4740 event for wworthington on DC01 at 00:32](./images/lockouts-dashboard.png)
 
-![Account lockout search confirmation — EventCode 4740, wworthington, DC01.schmeck.lab, 2026-06-12 00:32](./splunk-images/account-lockout.png)
+![Account lockout search confirmation — EventCode 4740, wworthington, DC01.schmeck.lab, 2026-06-12 00:32](./images/account-lockout.png)
 
-![DA Account Logon dashboard panel — ssummers 4624 events on DC01 at 00:39](./splunk-images/da-account-logon-dashboard.png)
+![DA Account Logon dashboard panel — ssummers 4624 events on DC01 at 00:39](./images/da-account-logon-dashboard.png)
 
-![ssummers logon search confirmation — 21 events, Logon_Type 3, DC01.schmeck.lab](./splunk-images/ssummers-logon.png)
+![ssummers logon search confirmation — 21 events, Logon_Type 3, DC01.schmeck.lab](./images/ssummers-logon.png)
 
-![ssummers 4624 search results detail](./splunk-images/ssummers-4624.png)
+![ssummers 4624 search results detail](./images/ssummers-4624.png)
 
 ---
 
