@@ -24,7 +24,7 @@ Every lab in this portfolio was conducted against this environment.
 
 The host machine runs nftables as its primary firewall with a strict deny-by-default policy. Full-disk encryption via LUKS2 is active. The lab environment runs on top of the daily-driver OS — VMs are started and stopped as needed rather than running continuously.
 
-The host configuration and hardening are documented separately in the [Linux Migration project](../../projects/linux-migration/README.md).
+The host configuration and hardening are documented separately in the [Linux Migration project](../../projects/linux-migration-hardening/README.md).
 
 ---
 
