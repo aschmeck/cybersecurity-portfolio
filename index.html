@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Aidan Schmeckpeper cybersecurity portfolio landing page focused on SOC analysis, SIEM operations, vulnerability management, and detection engineering fundamentals." />
+  <title>Aidan Schmeckpeper | Cybersecurity Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #11182b;
+      --panel-soft: #17213a;
+      --text: #edf2ff;
+      --muted: #aeb9d6;
+      --accent: #65d4ff;
+      --accent-2: #8ee6a6;
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(101, 212, 255, .18), transparent 34rem),
+        radial-gradient(circle at top right, rgba(142, 230, 166, .12), transparent 30rem),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+
+    .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      backdrop-filter: blur(16px);
+      background: rgba(11, 16, 32, .78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 68px;
+      gap: 20px;
+    }
+
+    .brand { font-weight: 800; letter-spacing: .2px; }
+    .brand span { color: var(--accent); }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: .94rem;
+      color: var(--muted);
+    }
+
+    .button, .button.secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+
+    .button {
+      color: #06101b;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 12px 28px rgba(101, 212, 255, .18);
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+      border-color: var(--border);
+      box-shadow: none;
+    }
+
+    .button:hover, .button.secondary:hover { transform: translateY(-1px); color: inherit; }
+
+    .hero {
+      padding: 86px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.28fr .72fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--accent-2);
+      font-weight: 800;
+      font-size: .88rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 5.2rem);
+      line-height: .98;
+      margin: 0 0 22px;
+      letter-spacing: -.06em;
+    }
+
+    .lead {
+      font-size: clamp(1.08rem, 2vw, 1.32rem);
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 0 28px;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
+    .stat-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .stat-card h2 { margin: 0 0 14px; font-size: 1.1rem; }
+    .stat-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+    .stat-card li { border-top: 1px solid var(--border); padding-top: 12px; color: var(--muted); }
+    .stat-card strong { color: var(--text); display: block; }
+
+    section { padding: 48px 0; }
+
+    .section-head { margin-bottom: 22px; }
+    .section-head h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); margin: 0 0 8px; letter-spacing: -.035em; }
+    .section-head p { color: var(--muted); margin: 0; max-width: 760px; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+
+    .card {
+      background: rgba(17, 24, 43, .82);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      min-height: 100%;
+    }
+
+    .card h3 { margin: 0 0 10px; font-size: 1.18rem; }
+    .card p { margin: 0 0 16px; color: var(--muted); }
+    .card ul { margin: 0 0 18px; padding-left: 19px; color: var(--muted); }
+    .card li { margin: 6px 0; }
+    .card .tag { display: inline-flex; color: var(--accent-2); font-weight: 800; font-size: .82rem; margin-bottom: 12px; }
+
+    .project-link {
+      display: inline-flex;
+      font-weight: 800;
+      color: var(--accent);
+      margin-top: auto;
+    }
+
+    .evidence {
+      display: grid;
+      gap: 12px;
+    }
+
+    .evidence-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .evidence-row strong { color: var(--accent-2); }
+    .evidence-row span { color: var(--muted); }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.045);
+      color: var(--muted);
+      font-weight: 650;
+      font-size: .92rem;
+    }
+
+    .callout {
+      background: linear-gradient(135deg, rgba(101,212,255,.16), rgba(142,230,166,.12));
+      border: 1px solid rgba(101,212,255,.28);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .callout h2 { margin-top: 0; }
+    .callout p { color: var(--muted); max-width: 860px; }
+
+    footer {
+      padding: 36px 0 56px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 36px;
+    }
+
+    code {
+      color: var(--accent-2);
+      background: rgba(255,255,255,.07);
+      padding: 2px 6px;
+      border-radius: 7px;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .navlinks { display: none; }
+      .hero { padding-top: 58px; }
+      .evidence-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#top">Aidan <span>Schmeckpeper</span></a>
+      <div class="navlinks">
+        <a href="#proof">Proof</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a class="button secondary" href="README.md">Full Repository</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Cybersecurity Portfolio</div>
+          <h1>SOC analysis, detection, and vulnerability work in a self-built lab.</h1>
+          <p class="lead">I built an isolated Active Directory homelab, instrumented it with Splunk and Sysmon, generated attacker-style activity from Kali Linux, investigated what the SIEM could see, and documented the gaps, fixes, and operational lessons.</p>
+          <div class="hero-actions">
+            <a class="button" href="#projects">Start with the strongest projects</a>
+            <a class="button secondary" href="README.md">View the full repo</a>
+          </div>
+        </div>
+        <aside class="stat-card" aria-label="Portfolio summary">
+          <h2>Focus areas</h2>
+          <ul>
+            <li><strong>SOC operations</strong> Splunk dashboards, triage views, Slack alerts, false-positive tuning.</li>
+            <li><strong>Detection fundamentals</strong> Windows Event Logs, Sysmon, WFP visibility, MITRE mapping.</li>
+            <li><strong>Vulnerability management</strong> Nmap, GVM, unauthenticated vs. authenticated scanning.</li>
+            <li><strong>Infrastructure</strong> Debian, KVM/QEMU, pfSense, Active Directory, Windows endpoints.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What this portfolio proves</h2>
+          <p>This is not a tool screenshot museum. The work is organized around investigation: what happened, what evidence supports it, what an attacker could do next, what a defender would see, and what needed to be tuned or remediated.</p>
+        </div>
+        <div class="evidence">
+          <div class="evidence-row">
+            <strong>Built the environment</strong>
+            <span>Debian 13 host, KVM/QEMU virtualization, pfSense segmentation, Windows Server 2022 domain controller, Windows 11 workstation, Ubuntu Splunk server, and Kali attack VM.</span>
+          </div>
+          <div class="evidence-row">
+            <strong>Instrumented telemetry</strong>
+            <span>Splunk Universal Forwarder, Windows Security logs, System/Application logs, Sysmon operational logs, and Windows Filtering Platform audit events.</span>
+          </div>
+          <div class="evidence-row">
+            <strong>Validated visibility</strong>
+            <span>Found that network scans were invisible until WFP auditing was enabled, then confirmed scan signatures in Splunk through repeat testing.</span>
+          </div>
+          <div class="evidence-row">
+            <strong>Documented failures</strong>
+            <span>Timezone mismatches, scheduler backlog, queue behavior, GVM authentication issues, Windows firewall profile drift, and Linux firewall rule conflicts are documented instead of quietly buried like inconvenient fossils.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Recommended review path</h2>
+          <p>For recruiters and hiring managers: start here. These projects best represent SOC analyst readiness, practical troubleshooting, and security reasoning under messy real-world conditions.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <span class="tag">1 · Best SOC analyst evidence</span>
+            <h3>SOC Dashboard and Alerting</h3>
+            <p>Built a Splunk dashboard for authentication anomalies, privilege use, process execution, and network indicators. Added scheduled Slack alerts and investigated an unplanned credential-scanning finding.</p>
+            <ul>
+              <li>Failed logon and lockout triage</li>
+              <li>Domain Admin workstation logon alerting</li>
+              <li>Scheduler backlog and alert tuning analysis</li>
+            </ul>
+            <a class="project-link" href="homelab/homelab-configuration/lab4-soc-dashboard-alerting.md">Open the SOC dashboard lab →</a>
+          </article>
+
+          <article class="card">
+            <span class="tag">2 · Best vulnerability management evidence</span>
+            <h3>Vulnerability Assessment Series</h3>
+            <p>Ran Nmap and GVM scans across the lab, compared unauthenticated and authenticated visibility, assessed the SIEM host as an attack surface, and tied findings back to defender telemetry.</p>
+            <ul>
+              <li>Reconnaissance and WFP visibility gap</li>
+              <li>Authenticated vs. unauthenticated scanning</li>
+              <li>Attack surface and detection lessons</li>
+            </ul>
+            <a class="project-link" href="homelab/vulnerability-assessment/va-lab-conclusion.md">Open the VA conclusion →</a>
+          </article>
+
+          <article class="card">
+            <span class="tag">3 · Best infrastructure evidence</span>
+            <h3>Splunk Homelab Build Series</h3>
+            <p>Designed and deployed the infrastructure behind the detections: segmented virtual networking, Splunk Enterprise, Active Directory, Windows log forwarding, and Sysmon telemetry.</p>
+            <ul>
+              <li>Segmented KVM lab network</li>
+              <li>AD DS and audit policy hardening</li>
+              <li>Sysmon deployment and forwarder troubleshooting</li>
+            </ul>
+            <a class="project-link" href="homelab/homelab-configuration/part1-splunk-deployment/splunk-homelab-part1.md">Open the Splunk build series →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap grid-2">
+        <article class="card">
+          <span class="tag">Additional evidence</span>
+          <h3>Debian 13 Workstation Migration and Hardening</h3>
+          <p>Migrated a daily-driver workstation from Windows 11 to Debian 13 with LUKS2 encryption, Secure Boot validation, nftables firewalling, SSH restrictions, Lynis, ClamAV, sysctl hardening, and systemd maintenance timers.</p>
+          <a class="project-link" href="projects/linux-migration/README.md">Open the Linux hardening project →</a>
+        </article>
+
+        <article class="card">
+          <span class="tag">How to read the work</span>
+          <h3>What to look for</h3>
+          <p>Each write-up is meant to show process, not just result. The useful parts are the findings, root-cause analysis, evidence screenshots, SPL searches, remediation notes, and attacker/defender perspective sections.</p>
+          <a class="project-link" href="README.md">Open the full repository map →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Skills represented</h2>
+          <p>These are the practical skills demonstrated across the portfolio, mapped to the kind of work expected in SOC, blue team, junior detection, and vulnerability management roles.</p>
+        </div>
+        <div class="skills" aria-label="Skills list">
+          <span class="skill">Splunk Enterprise</span>
+          <span class="skill">SPL</span>
+          <span class="skill">Windows Event Logs</span>
+          <span class="skill">Sysmon</span>
+          <span class="skill">MITRE ATT&CK</span>
+          <span class="skill">Alert tuning</span>
+          <span class="skill">SOC triage</span>
+          <span class="skill">Nmap</span>
+          <span class="skill">GVM / Greenbone</span>
+          <span class="skill">Active Directory</span>
+          <span class="skill">pfSense</span>
+          <span class="skill">KVM/QEMU</span>
+          <span class="skill">Debian Linux</span>
+          <span class="skill">nftables</span>
+          <span class="skill">systemd timers</span>
+          <span class="skill">Technical documentation</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="callout">
+          <h2>Why this portfolio is organized this way</h2>
+          <p>The full repository is useful for depth, but it is too broad as a first impression. This page is the front door: it points reviewers toward the strongest evidence first, then lets them go deeper once they care. Astonishingly, people evaluate things faster when you stop making them solve a scavenger hunt.</p>
+          <div class="hero-actions">
+            <a class="button" href="homelab/homelab-configuration/lab4-soc-dashboard-alerting.md">Start with SOC Dashboard and Alerting</a>
+            <a class="button secondary" href="README.md">Browse everything</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>Aidan Schmeckpeper</strong><br />
+      B.S. Cybersecurity · CompTIA Security+ · <a href="https://github.com/aschmeck">GitHub @aschmeck</a>
+    </div>
+  </footer>
+</body>
+</html>
