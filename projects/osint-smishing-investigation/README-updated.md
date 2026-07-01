@@ -1,4 +1,4 @@
-# OSINT Case Study — Smishing Job Scam Investigation
+# OSINT Smishing Investigation — Job Scam Case Study
 
 **Author:** [@aschmeck](https://github.com/aschmeck)
 **Target Role:** SOC Analyst / Cybersecurity Analyst
@@ -110,6 +110,19 @@ Evidence was preserved as if documenting a real security incident.
 Sensitive details were redacted in this public write-up. Internal notes retained the full artifacts for possible reporting, but the portfolio version focuses on methodology, findings, and defensive analysis.
 
 ---
+
+
+## Skills Demonstrated
+
+- User-reported phishing and smishing triage
+- Evidence preservation and redaction
+- Defensive OSINT investigation
+- DNS, WHOIS/RDAP, and certificate transparency analysis
+- Web header and metadata review
+- Social engineering pattern analysis
+- Indicator extraction and reporting-path development
+- Attribution-limit documentation
+- Responsible handling of exposed backend misconfiguration
 
 ## Investigation Workflow
 
@@ -240,7 +253,7 @@ From a defensive standpoint, this was one of the strongest technical findings in
 
 ---
 
-## MITRE ATT&CK and SOC Workflow Mapping
+## MITRE ATT&CK, Fraud Pattern, and SOC Workflow Mapping
 
 This investigation maps most directly to phishing, social engineering, resource development, and external threat intelligence workflows. Because no endpoint compromise occurred, the mapping is limited to observed adversary behavior and defensive analysis rather than host-based detection.
 
@@ -275,7 +288,7 @@ This investigation maps most directly to phishing, social engineering, resource 
 **Defender view:** Organizations and individuals can detect or disrupt similar campaigns by monitoring:
 
 * Newly registered domains impersonating known brands
-* Low-reputation TLDs used in job or payment workflows
+* Newly registered or low-reputation domains used in job or payment workflows
 * Certificate transparency records for suspicious subdomains
 * SMS/iMessage messages that move users to external task portals
 * Invitation-code registration workflows tied to unsolicited job offers
@@ -376,4 +389,4 @@ The most important part of this investigation was not finding a single smoking g
 
 ---
 
-*Part of the [Cybersecurity Portfolio](https://github.com/aschmeck) by [@aschmeck](https://github.com/aschmeck)*
+*Part of the [Cybersecurity Portfolio](https://github.com/aschmeck/cybersecurity-portfolio) by [@aschmeck](https://github.com/aschmeck)*
