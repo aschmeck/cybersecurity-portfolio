@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Aidan Schmeckpeper cybersecurity portfolio landing page focused on SOC analysis, SIEM operations, vulnerability management, and detection engineering fundamentals." />
+  <meta name="description" content="Aidan Schmeckpeper cybersecurity portfolio focused on SOC analysis, detection, vulnerability management, infrastructure troubleshooting, and incident-style investigation." />
   <title>Aidan Schmeckpeper | Cybersecurity Portfolio</title>
   <style>
     :root {
@@ -118,8 +118,8 @@
     }
 
     h1 {
-      font-size: clamp(2.4rem, 6vw, 5.2rem);
-      line-height: .98;
+      font-size: clamp(3.3rem, 7vw, 6rem);
+      line-height: .94;
       margin: 0 0 22px;
       letter-spacing: -.06em;
     }
@@ -150,7 +150,7 @@
 
     .section-head { margin-bottom: 22px; }
     .section-head h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); margin: 0 0 8px; letter-spacing: -.035em; }
-    .section-head p { color: var(--muted); margin: 0; max-width: 760px; }
+    .section-head p { color: var(--muted); margin: 0; max-width: 820px; }
 
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
@@ -168,6 +168,18 @@
     .card ul { margin: 0 0 18px; padding-left: 19px; color: var(--muted); }
     .card li { margin: 6px 0; }
     .card .tag { display: inline-flex; color: var(--accent-2); font-weight: 800; font-size: .82rem; margin-bottom: 12px; }
+    .card ul a { color: var(--accent); font-weight: 700; }
+    .card ul a:hover { color: var(--accent-2); }
+
+    .card-skills {
+      font-size: .92rem;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .card-skills strong {
+      color: var(--accent-2);
+    }
 
     .project-link {
       display: inline-flex;
@@ -183,7 +195,7 @@
 
     .evidence-row {
       display: grid;
-      grid-template-columns: 180px 1fr;
+      grid-template-columns: 210px 1fr;
       gap: 16px;
       padding: 16px;
       background: rgba(255,255,255,.035);
@@ -210,17 +222,6 @@
       font-size: .92rem;
     }
 
-    .callout {
-      background: linear-gradient(135deg, rgba(101,212,255,.16), rgba(142,230,166,.12));
-      border: 1px solid rgba(101,212,255,.28);
-      border-radius: 24px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-    }
-
-    .callout h2 { margin-top: 0; }
-    .callout p { color: var(--muted); max-width: 860px; }
-
     footer {
       padding: 36px 0 56px;
       color: var(--muted);
@@ -240,18 +241,21 @@
       .navlinks { display: none; }
       .hero { padding-top: 58px; }
       .evidence-row { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(3rem, 16vw, 5rem); }
     }
   </style>
 </head>
 <body>
   <header>
     <nav class="wrap" aria-label="Main navigation">
-      <a class="brand" href="#top">Aidan <span>Schmeckpeper</span></a>
+      <a class="brand" href="#top">Cybersecurity Portfolio</a>
       <div class="navlinks">
-        <a href="#proof">Proof</a>
+        <a href="#approach">Approach</a>
         <a href="#projects">Projects</a>
+        <a href="#portfolio-map">Portfolio Map</a>
         <a href="#skills">Skills</a>
-        <a class="button secondary" href="README.md">Full Repository</a>
+        <a href="https://www.linkedin.com/in/aschmeck">LinkedIn</a> 
+        <a class="button secondary" href="https://www.github.com/aschmeck/cybersecurity-portfolio">Full Repository</a>
       </div>
     </nav>
   </header>
@@ -261,47 +265,49 @@
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow">Cybersecurity Portfolio</div>
-          <h1>Practical SOC, detection, and vulnerability management work from a self-built Active Directory lab.</h1>
-          <p class="lead">I built an isolated Active Directory homelab, connected Windows and Sysmon telemetry to Splunk, simulated attacker activity from Kali Linux, and documented the detection gaps, fixes, findings, and operational lessons that followed.</p>
+          <h1>Aidan Schmeckpeper</h1>
+          <p class="lead">Security+ certified cybersecurity graduate focused on SOC analysis, detection, vulnerability management, and incident-style investigation.</p>
+          <p class="lead">The work here uses a self-built Active Directory homelab to validate Splunk and Sysmon telemetry, simulate attacker activity, tune alerts, assess vulnerabilities, and explain findings clearly.</p>
           <div class="hero-actions">
             <a class="button" href="#projects">View featured projects</a>
-            <a class="button secondary" href="README.md">Browse full repository</a>
+            <a class="button secondary" href="https://www.github.com/aschmeck/cybersecurity-portfolio">Browse full repository</a>
           </div>
         </div>
-        <aside class="stat-card" aria-label="Portfolio summary">
-          <h2>Focus areas</h2>
+
+        <aside class="stat-card" aria-label="Candidate summary">
+          <h2>Candidate profile</h2>
           <ul>
-            <li><strong>SOC operations</strong> Splunk dashboards, triage views, Slack alerts, false-positive tuning.</li>
-            <li><strong>Detection fundamentals</strong> Windows Event Logs, Sysmon, WFP visibility, MITRE mapping.</li>
-            <li><strong>Vulnerability management</strong> Nmap, GVM, unauthenticated vs. authenticated scanning.</li>
-            <li><strong>Infrastructure</strong> Debian, KVM/QEMU, pfSense, Active Directory, Windows endpoints.</li>
+            <li><strong>20 years in operations leadership</strong> Pressure-tested judgment from environments where timing, prioritization, communication, and follow-through mattered every day.</li>
+            <li><strong>Incident-oriented mindset</strong> Triage the problem, verify evidence, stabilize the situation, document what happened, and improve the process afterward.</li>
+            <li><strong>Security focus</strong> SOC analysis, detection, vulnerability management, and hands-on investigation in a self-built lab.</li>
+            <li><strong>Technical foundation</strong> B.S. Cybersecurity, CompTIA Security+, Splunk, Active Directory, Windows telemetry, Linux, and networking.</li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <section id="proof">
+    <section id="approach">
       <div class="wrap">
         <div class="section-head">
-          <h2>What this portfolio proves</h2>
-          <p>This is not a tool screenshot museum. The work is organized around investigation: what happened, what evidence supports it, what an attacker could do next, what a defender would see, and what needed to be tuned or remediated.</p>
+          <h2>Investigative Approach</h2>
+          <p>The projects are organized around operational reasoning: what happened, what evidence supports it, what visibility existed, what gaps were found, and what changed as a result.</p>
         </div>
         <div class="evidence">
           <div class="evidence-row">
-            <strong>Built the environment</strong>
-            <span>Debian 13 host, KVM/QEMU virtualization, pfSense segmentation, Windows Server 2022 domain controller, Windows 11 workstation, Ubuntu Splunk server, and Kali attack VM.</span>
+            <strong>Operational Troubleshooting</strong>
+            <span>Built and maintained the lab infrastructure behind the portfolio, including Debian, KVM/QEMU, pfSense, Active Directory, Windows endpoints, and Splunk. The write-ups show configuration choices, failures, root causes, and fixes so the troubleshooting process is visible alongside the final result.</span>
           </div>
           <div class="evidence-row">
-            <strong>Instrumented telemetry</strong>
-            <span>Splunk Universal Forwarder, Windows Security logs, System/Application logs, Sysmon operational logs, and Windows Filtering Platform audit events.</span>
+            <strong>Telemetry Validation</strong>
+            <span>Configured Windows Event Logs, Sysmon, Splunk Universal Forwarder, and Windows Filtering Platform auditing, then verified what data actually appeared in Splunk before relying on it for detection.</span>
           </div>
           <div class="evidence-row">
-            <strong>Validated visibility</strong>
-            <span>Found that network scans were invisible until WFP auditing was enabled, then confirmed scan signatures in Splunk through repeat testing.</span>
+            <strong>Evidence Based Investigation</strong>
+            <span>Used SIEM data and vulnerability findings to reconstruct activity, explain impact, document likely attacker goals, and identify what a defender would need to monitor or tune.</span>
           </div>
           <div class="evidence-row">
-            <strong>Documented failures</strong>
-            <span>Timezone mismatches, scheduler backlog, queue behavior, GVM authentication issues, Windows firewall profile drift, and Linux firewall rule conflicts are documented instead of quietly buried like inconvenient fossils.</span>
+            <strong>Process Discipline</strong>
+            <span>Documented gaps, false positives, alert delays, authentication issues, firewall drift, and remediation steps so each project shows not just what worked, but what had to be corrected along the way.</span>
           </div>
         </div>
       </div>
@@ -310,13 +316,13 @@
     <section id="projects">
       <div class="wrap">
         <div class="section-head">
-          <h2>Recommended review path</h2>
-          <p>For recruiters and hiring managers: start here. These projects best represent SOC analyst readiness, practical troubleshooting, and security reasoning under messy real-world conditions.</p>
+          <h2>Featured Projects</h2>
+          <p>A curated selection of current portfolio highlights, with the full project library available below.</p>
         </div>
 
         <div class="grid-3">
           <article class="card">
-            <span class="tag">1 · Best SOC analyst evidence</span>
+            <span class="tag">1 · SOC analyst evidence</span>
             <h3>SOC Dashboard and Alerting</h3>
             <p>Built a Splunk dashboard for authentication anomalies, privilege use, process execution, and network indicators. Added scheduled Slack alerts and investigated an unplanned credential-scanning finding.</p>
             <ul>
@@ -324,29 +330,25 @@
               <li>Domain Admin workstation logon alerting</li>
               <li>Scheduler backlog and alert tuning analysis</li>
             </ul>
-            <a class="project-link" href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/soc-dashboard-alerting">Open the SOC dashboard lab →</a>
+            <p class="card-skills"><strong>Skills:</strong> Splunk, SPL, Windows Event Logs, Sysmon, MITRE ATT&CK, alert tuning, SOC triage.</p>
+            <a class="project-link" href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/soc-dashboard-alerting">View Project →</a>
           </article>
 
           <article class="card">
-  	    <span class="tag">2 Real-World Smishing Investigation</span>
+            <span class="tag">2 · Real-world investigation</span>
             <h3>Smishing Investigation Project</h3>
-            <p>
-    		Investigated a real smishing attempt from initial message review through domain analysis,
-    		infrastructure checks, website content assessment, and final disposition. Treated the case
-    		as a lightweight incident investigation rather than a simple scam screenshot.
-  	    </p>
-  	    <ul>
+            <p>Investigated a real smishing attempt from initial message review through domain analysis, infrastructure checks, website content assessment, and final disposition. Treated the case as a lightweight incident investigation rather than a simple scam screenshot.</p>
+            <ul>
               <li>Suspicious message and URL analysis</li>
-    	      <li>Domain, website, and infrastructure review</li>
+              <li>Domain, website, and infrastructure review</li>
               <li>Phishing likelihood assessment and reporting</li>
-  	    </ul>
-  	    <a class="project-link" href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/osint-smishing-investigation">
-    	     View project →
-  	    </a>
-	  </article>
+            </ul>
+            <p class="card-skills"><strong>Skills:</strong> OSINT, phishing analysis, domain review, website assessment, evidence handling, incident reporting.</p>
+            <a class="project-link" href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/osint-smishing-investigation">View project →</a>
+          </article>
 
           <article class="card">
-            <span class="tag">3 · Best infrastructure evidence</span>
+            <span class="tag">3 · Infrastructure evidence</span>
             <h3>Homelab Build Series</h3>
             <p>Designed and deployed the infrastructure behind the detections: segmented virtual networking, Splunk Enterprise, Active Directory, Windows log forwarding, and Sysmon telemetry.</p>
             <ul>
@@ -354,61 +356,89 @@
               <li>AD DS and audit policy hardening</li>
               <li>Sysmon deployment and forwarder troubleshooting</li>
             </ul>
-            <a class="project-link" href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/homelab/homelab-configuration/homelab-architecture">Open the Homelab build series →</a>
+            <p class="card-skills"><strong>Skills:</strong> Active Directory, Splunk Universal Forwarder, Sysmon, pfSense, KVM/QEMU, Windows Server, Linux networking.</p>
+            <a class="project-link" href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/active-directory-siem">View Project →</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="wrap grid-2">
-        <article class="card">
-          <span class="tag">Additional evidence</span>
-          <h3>Debian 13 Workstation Migration and Hardening</h3>
-          <p>Migrated a daily-driver workstation from Windows 11 to Debian 13 with LUKS2 encryption, Secure Boot validation, nftables firewalling, SSH restrictions, Lynis, ClamAV, sysctl hardening, and systemd maintenance timers.</p>
-          <a class="project-link" href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/linux-migration-hardening">Open the Linux hardening project →</a>
-        </article>
+    <section id="portfolio-map">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Full portfolio map</h2>
+          <p>The featured projects above are the strongest starting points. This section links directly to the rest of the portfolio for reviewers who want the full technical record.</p>
+        </div>
 
-        <article class="card">
-          <span class="tag">How to read the work</span>
-          <h3>What to look for</h3>
-          <p>Each write-up is meant to show process, not just result. The useful parts are the findings, root-cause analysis, evidence screenshots, SPL searches, remediation notes, and attacker/defender perspective sections.</p>
-          <a class="project-link" href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main">Open the full repository map →</a>
-        </article>
+        <div class="grid-2">
+          <article class="card">
+            <span class="tag">Security operations and detection</span>
+            <h3>SOC and SIEM work</h3>
+            <ul>
+              <li><a href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/soc-dashboard-alerting">SOC Dashboard and Alerting</a></li>
+              <li><a href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/active-directory-siem">Active Directory SIEM Homelab Series</a></li>
+              <li><a href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/wazuh-alert-optimization">Wazuh Alert Optimization</a></li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="tag">Vulnerability management</span>
+            <h3>Assessment and attack surface analysis</h3>
+            <ul>
+              <li><a href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/vulnerability-assessment">Vulnerability Assessment Series</a></li>
+              <li><a href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/vulnerability-assessment/reports">Scan Reports and Evidence</a></li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="tag">Incident-style investigation</span>
+            <h3>OSINT and phishing analysis</h3>
+            <ul>
+              <li><a href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/osint-smishing-investigation">Smishing Investigation Project</a></li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="tag">Infrastructure and hardening</span>
+            <h3>Systems, networking, and host security</h3>
+            <ul>
+              <li><a href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/linux-migration-hardening">Debian 13 Workstation Migration and Hardening</a></li>
+              <li><a href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/homelab/homelab-configuration">Homelab Configuration</a></li>
+              <li><a href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/homelab/homelab-configuration/homelab-architecture">Homelab Architecture Diagram</a></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="hero-actions">
+          <a class="button secondary" href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main">Open the full repository map</a>
+        </div>
       </div>
     </section>
 
-    <section class="skills">
-  <h2>Skills represented</h2>
-  <p>
-    Practical skills demonstrated across the portfolio, mapped to SOC, blue team,
-    junior detection, and vulnerability management work.
-  </p>
-
-  <p class="skill-list">
-    Splunk Enterprise · SPL · Windows Event Logs · Sysmon · MITRE ATT&CK · Alert tuning ·
-    SOC triage · Nmap · GVM / Greenbone · Active Directory · pfSense · KVM/QEMU ·
-    Debian Linux · nftables · systemd timers · Technical documentation
-  </p>
-
-  <p class="skill-links">
-    Mapped in:
-    <a href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/soc-dashboard-alerting">SOC Dashboard</a>,
-    <a href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/active-directory-siem">Active Directory SIEM</a>,
-    <a href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/vulnerability-assessment">Vulnerability Assessment</a>,
-    <a href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/linux-migration-hardening">Linux Hardening</a>.
-  </p>
-</section>
-
-    <section>
+    <section id="skills">
       <div class="wrap">
-        <div class="callout">
-          <h2>Why this portfolio is organized this way</h2>
-          <p>The full repository is useful for depth, but it is too broad as a first impression. This page is the front door: it points reviewers toward the strongest evidence first, then lets them go deeper once they care. Astonishingly, people evaluate things faster when you stop making them solve a scavenger hunt.</p>
-          <div class="hero-actions">
-            <a class="button" href="https://github.com/aschmeck/cybersecurity-portfolio/tree/main/projects/soc-dashboard-alerting">Start with SOC Dashboard and Alerting</a>
-            <a class="button secondary" href="README.md">Browse everything</a>
-          </div>
+        <div class="section-head">
+          <h2>Skills represented</h2>
+          <p>Practical skills demonstrated across the portfolio, mapped to SOC, blue team, junior detection, vulnerability management, and infrastructure work.</p>
+        </div>
+
+        <div class="skills">
+          <span class="skill">Splunk Enterprise</span>
+          <span class="skill">SPL</span>
+          <span class="skill">Windows Event Logs</span>
+          <span class="skill">Sysmon</span>
+          <span class="skill">MITRE ATT&CK</span>
+          <span class="skill">Alert tuning</span>
+          <span class="skill">SOC triage</span>
+          <span class="skill">Nmap</span>
+          <span class="skill">GVM / Greenbone</span>
+          <span class="skill">Active Directory</span>
+          <span class="skill">pfSense</span>
+          <span class="skill">KVM/QEMU</span>
+          <span class="skill">Debian Linux</span>
+          <span class="skill">nftables</span>
+          <span class="skill">systemd timers</span>
+          <span class="skill">Technical documentation</span>
         </div>
       </div>
     </section>
@@ -417,7 +447,7 @@
   <footer>
     <div class="wrap">
       <strong>Aidan Schmeckpeper</strong><br />
-      B.S. Cybersecurity · CompTIA Security+ · <a href="https://github.com/aschmeck">GitHub @aschmeck</a>
+      B.S. Cybersecurity · CompTIA Security+ · <a href="https://github.com/aschmeck">GitHub @aschmeck</a> · <a href="https://www.linkedin.com/in/aschmeck">LinkedIn</a>
     </div>
   </footer>
 </body>
