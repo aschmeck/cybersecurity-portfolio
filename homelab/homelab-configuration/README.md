@@ -81,8 +81,13 @@ Audit policy is configured on DC01 to capture key security subcategories includi
 
 ## SIEM Configuration
 
-The lab originally ran Wazuh as its SIEM, used during the initial alert operationalization work documented in the Wazuh Failed Logon Alerting project. The environment was subsequently migrated to Splunk Enterprise, which is the active SIEM for all current and future lab work. That migration is documented in the Splunk Homelab series under `services/`.
+## SIEM Configuration
 
-Splunk Enterprise runs on Ubuntu at `192.168.10.50`. A dedicated `windows` index receives forwarded events from both DC01 and WIN11. Splunk is configured for boot-start on the Ubuntu host and is brought online during active detection work. The Universal Forwarder on each Windows host queues events locally while Splunk is offline, ensuring no telemetry is lost between sessions.
+The lab originally used Wazuh during an earlier alert operationalization project. Wazuh has since been retired from the active homelab and is preserved only as a legacy standalone portfolio project.
 
+Splunk Enterprise is now the active SIEM for current lab work. It runs on the Ubuntu host at `192.168.10.50`, with a dedicated `windows` index receiving forwarded Windows Event Logs from DC01 and WIN11.
+
+The current Splunk telemetry foundation is documented in the [Active Directory SIEM Build](../../projects/active-directory-siem/README.md) project. The operational dashboarding and alert workflow built on top of that telemetry is documented in the [SOC Dashboard and Alerting Pipeline](../../projects/soc-dashboard-alerting/README.md) project.
+
+The Universal Forwarder on each Windows host is configured to send telemetry to Splunk on port `9997`.
 
